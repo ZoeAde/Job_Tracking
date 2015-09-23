@@ -17,10 +17,101 @@
           <ul class="nav navbar-nav">
             <li><a ng-click="addJob=true"><i class="fa fa-plus"></i> Add Job</a></li>
             <li><a ng-click="addJob=false">Tracking</a></li>
+            <li><a ng-click="showViews = !showViews">Views</a></li>
           </ul>
         </div>
       </div>
-    </nav>
+    <div ng-show="showViews">
+      <div class="row">
+        <div class="col-md-2 viewBlock">
+          <h6 class="viewHeader">Company</h6>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Name
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Industry
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Location
+              </label>
+            </div>
+        </div>
+        <div class="col-md-2 viewBlock">
+          <h6 class="viewHeader">Position</h6>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Title
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Salary
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Requirements
+              </label>
+            </div>
+        </div>
+        <div class="col-md-2 viewBlock">
+          <h6 class="viewHeader">Contact</h6>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Name
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Job Title
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Email
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Phone
+              </label>
+            </div>
+        </div>
+        <div class="col-md-2 viewBlock">
+          <h6 class="viewHeader">Tracking</h6>
+            <div class="checkbox">
+              <label ng-click="hideCompany=true">
+                <input type="checkbox">Status
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Applied
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Last Contact
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">Notes
+              </label>
+            </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
 <!--END NAV-->
 
 <!-- TABLE -->

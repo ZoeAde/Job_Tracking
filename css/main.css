@@ -124,3 +124,19 @@ a:hover {
 .edit, .edit > button {
   background-color: white;
 }
+
+
+/*NAV VIEW SUBHEADER*/
+.viewBlock {
+  padding-left: 2em;
+  padding-right: 4em;
+}
+
+.viewHeader {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.checkbox {
+  font-size: 0.9em;
+}

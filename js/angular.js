@@ -15,7 +15,9 @@ app.controller('jobController', function($scope, $location) {
       $scope.jobs.splice(index, 1);
     };
 
-    $scope.jobs = [{status: "cold", company:"DeVita", companyURL: "www.devita.com", industry:"Healthcare", location:"Denver", position:"Jr JS Dev", contact: "none", notes: "This is a perfect fit!"},{status: "interviewing", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"},{status: "scheduled", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"},{status: "offer", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"},{status: "denied", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"}, {status: "applied", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"}];
+    $scope.check =
+
+    $scope.jobs = [{status: "cold", company:"DeVita", companyURL: "www.devita.com", industry:"Healthcare", location:"Denver", position:"Jr JS Dev", contact: "none", notes: "This is a perfect fit!"},{status: "interviewing", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"},{status: "scheduled", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"}];
 
 
 $scope.addNewJob = function() {
