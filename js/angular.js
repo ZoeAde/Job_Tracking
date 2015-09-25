@@ -15,9 +15,11 @@ app.controller('jobController', function($scope, $location) {
       $scope.jobs.splice(index, 1);
     };
 
-    $scope.check =
+    $scope.check = function() {
+      console.log("hello");
+    };
 
-    $scope.jobs = [{status: "cold", company:"DeVita", companyURL: "www.devita.com", industry:"Healthcare", location:"Denver", position:"Jr JS Dev", contact: "none", notes: "This is a perfect fit!"},{status: "interviewing", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"},{status: "scheduled", company:"ESPN", industry:"Sports", location:"SF", position:"Full Stack Dev", contact: "Mary Ann", notes: "Waiting to hear back"}];
+    $scope.jobs = [{status: "cold", company:"DeVita", companyURL: "www.devita.com", industry:"Healthcare", location:"Denver", position:"Jr Developer", contact: "Juan Ramirez", notes: "This is a perfect fit!"},{status: "interviewing", company:"ESPN", industry:"Sports", location:"San Francisco", position:"Full Stack Dev", contact: "Mary Ann Brown", notes: "Waiting to hear back"},{status: "scheduled", company:"Google", industry:"Technology", location:"Boulder", position:"Front End Web Developer", contact: "Julie Cooper", notes: "Waiting to hear back"}];
 
 
 $scope.addNewJob = function() {
