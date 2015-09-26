@@ -1,8 +1,3 @@
-// sample angular code
-
-var app = angular.module('myApp', ['ngRoute']);
-
-
 app.controller('jobController', function($scope, $location) {
 
     $scope.go = function(marker) {
