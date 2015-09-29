@@ -2,13 +2,21 @@ var mongoose = require('mongoose-q')(require('mongoose'), {spread:true});
 var Schema = mongoose.Schema;
 
 var Company = new Schema({
-  name: String,
-  url: String,
-  location: String,
+  companyName: String,
+  companyUrl: String,
   industry: String,
-  position: String,
-  contact: String,
+  location: String,
+  positionTitle: String,
+  positionUrl: String,
+  salary: Number,
+  requirements: String,
+  contactName: String,
+  contactTitle: String,
+  contactEmail: String,
+  contactPhone: String,
   status: String,
+  applied: String,
+  recentContact: String,
   notes: String
 });
 

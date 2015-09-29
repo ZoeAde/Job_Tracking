@@ -8,26 +8,26 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
-  <body ng-controller="jobController">
+  <body>
 <!--   NAV -->
     <nav class="navbar navbar-default">
       <div class="container-fluid navContainer">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Hired</a>
+          <a class="navbar-brand">Jobgress</a>
           <ul class="nav navbar-nav">
-            <li><a ng-click="addJob=true"><i class="fa fa-plus"></i> Add Job</a></li>
-            <li><a ng-click="addJob=false">Tracking</a></li>
+            <li><a href="/#/add" ng-click="go('/add')"><i class="fa fa-plus"></i>Add Job</a></li>
+            <li><a href="/#/" ng-click="go('/')">Tracking</a></li>
             <li><a ng-click="showViews = !showViews">Views</a></li>
           </ul>
         </div>
       </div>
     <div ng-show="showViews">
       <div class="row">
-        <div class="col-xs-2 viewBlock">
+        <div class="col-xs-3 viewBlock">
           <h6 class="viewHeader">Company</h6>
             <div class="checkbox">
               <label >
-                <input ng-click="companyNameToggle = !companyNameToggle" type="checkbox">Name
+                <input ng-click="companyNameToggle = !companyNameToggle" type="checkbox" checked>Name
               </label>
             </div>
             <div class="checkbox">
@@ -41,7 +41,7 @@
               </label>
             </div>
         </div>
-        <div class="col-xs-2 viewBlock">
+        <div class="col-xs-3 viewBlock">
           <h6 class="viewHeader">Position</h6>
             <div class="checkbox">
               <label>
@@ -59,7 +59,7 @@
               </label>
             </div>
         </div>
-        <div class="col-xs-2 viewBlock">
+        <div class="col-xs-3 viewBlock">
           <h6 class="viewHeader">Contact</h6>
             <div class="checkbox">
               <label>
@@ -82,7 +82,7 @@
               </label>
             </div>
         </div>
-        <div class="col-xs-2 viewBlock">
+        <div class="col-xs-3 viewBlock">
           <h6 class="viewHeader">Tracking</h6>
             <div class="checkbox">
               <label>
@@ -111,7 +111,7 @@
 <!--END NAV-->
 
 
-<div ng-views>
+<div ng-view>
   <!-- insert pages here -->
 </div>
 

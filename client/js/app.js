@@ -1,3 +1,3 @@
-var app = angular.module('myApp', ['routes', 'factories']);
+var app = angular.module('myApp', ['routes']);
 
 

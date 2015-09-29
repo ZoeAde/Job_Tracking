@@ -14,13 +14,21 @@ router.get('/companies', function(req, res, next){
 //post all Companies
 router.post('/companies', function(req, res, next){
   newCompany = new Company({
-    name: req.body.name,
-    url: req.body.url,
-    location: req.body.location,
+    companyName: req.body.companyName,
+    companyUrl: req.body.companyUrl,
     industry: req.body.industry,
-    position: req.body.position,
-    contact: req.body.contact,
+    location: req.body.location,
+    positionTitle: req.body.positionTitle,
+    positionUrl: req.body.positionUrl,
+    salary: req.body.salary,
+    requirements: req.body.requirements,
+    contactName: req.body.contactName,
+    contactTitle: req.body.contactTitle,
+    contactEmail: req.body.contactEmail,
+    contactPhone: req.body.contactPhone,
     status: req.body.status,
+    applied: req.body.applied,
+    recentContact: req.body.recentContact,
     notes: req.body.notes
   }).saveQ()
     .then(function(results){
@@ -43,13 +51,21 @@ router.get('/company/:id', function(req, res, next){
 //put single Company
 router.put('/company/:id', function(req, res, next){
   var update = {
-  name: req.body.name,
-  url: req.body.url,
-  location: req.body.location,
+  companyName: req.body.companyName,
+  companyUrl: req.body.companyUrl,
   industry: req.body.industry,
-  position: req.body.position,
-  contact: req.body.contact,
+  location: req.body.location,
+  positionTitle: req.body.positionTitle,
+  positionUrl: req.body.positionUrl,
+  salary: req.body.salary,
+  requirements: req.body.requirements,
+  contactName: req.body.contactName,
+  contactPosition: req.body.contactPosition,
+  contactEmail: req.body.contactEmail,
+  contactPhone: req.body.contactPhone,
   status: req.body.status,
+  applied: req.body.applied,
+  recentContact: req.body.recentContact,
   notes: req.body.notes
   };
   Company.findByIdAndUpdateQ(req.params.id, update, {new:true})

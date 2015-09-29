@@ -1,6 +1,6 @@
 
 <!-- TABLE -->
-  <div ng-hide="addJob" class="allTable">
+  <div class="allTable">
     <header>
       <h1 class="site-title">tracking</h1>
       <p>Manage all job applications</p>
@@ -31,12 +31,12 @@
       <tbody id="tableBody">
         <tr ng-repeat="job in jobs | orderBy:sortType:sortReverse | filter:searchJobs" class={{job.status}}>
           <td ng-hide="trackingStatusToggle">{{ job.status }}</td>
-          <td ng-hide="companyNameToggle"><a ng-href="{{ job.companyUrl }}">{{ job.company }}</a></td>
+          <td ng-hide="companyNameToggle"><a ng-href="{{ job.companyUrl }}">{{ job.companyName }}</a></td>
           <td ng-hide="companyIndustryToggle">{{ job.industry }}</td>
           <td ng-hide="companyLocationToggle">{{ job.location }}</td>
-          <td ng-hide="positionTitleToggle">{{ job.position }}</td>
-          <td ng-hide="contactNameToggle">{{ job.contact }}</td>
-          <td class="edit"><button class="btn glyphicon glyphicon-edit" data-toggle="popover" data-trigger="mouse-over" title="Edit" data-html="true"></button><button ng-click="deleteJob(job)" class="btn glyphicon glyphicon-remove" data-toggle="popover" data-trigger="hover" title="Delete" data-html="true"></button></td>
+          <td ng-hide="positionTitleToggle">{{ job.positionTitle }}</td>
+          <td ng-hide="contactNameToggle">{{ job.contactName }}</td>
+          <td class="edit"><button class="btn glyphicon glyphicon-edit" data-toggle="popover" data-trigger="mouse-over" title="Edit" data-html="true"></button><button ng-click="deleteCompany(job._id)" class="btn glyphicon glyphicon-remove" data-toggle="popover" data-trigger="hover" title="Delete" data-html="true"></button></td>
         </tr>
       </tbody>
       </table>

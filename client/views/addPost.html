@@ -1,37 +1,37 @@
   <!-- new/edit job form -->
-    <div ng-show="addJob" class="container main">
+    <div class="container main">
       <div class="form">
-        <form ng-submit="addNewJob()">
+        <form>
           <div class="row">
             <div class="col-md-6">
               <h6>COMPANY</h6>
               <div class="form-group">
-                <input placeholder="Name" ng-model="company" type="text" class="form-control" id="company">
+                <input placeholder="Name" ng-model="newJob.companyName" type="text" class="form-control" id="companyName">
               </div>
               <div class="form-group">
-                <input placeholder="URL" ng-model="companyURL" type="text" class="form-control" id="companyURL">
+                <input placeholder="URL" ng-model="newJob.companyURL" type="text" class="form-control" id="companyURL">
               </div>
               <div class="form-group">
-                <input placeholder="Industry" ng-model="industry" type="text" class="form-control" id="industry">
+                <input placeholder="Industry" ng-model="newJob.industry" type="text" class="form-control" id="industry">
               </div>
               <div class="form-group">
-                <input placeholder="Location" ng-model="location" type="text" class="form-control" id="location">
+                <input placeholder="Location" ng-model="newJob.location" type="text" class="form-control" id="location">
               </div>
             </div>
 
             <div class="col-md-6">
               <h6>POSITION</h6>
               <div class="form-group">
-                <input placeholder="Title" ng-model="position" type="text" class="form-control" id="position">
+                <input placeholder="Title" ng-model="newJob.positionTitle" type="text" class="form-control" id="positionTitle">
               </div>
               <div class="form-group">
-                <input placeholder="URL" ng-model="positionURL" type="text" class="form-control" id="positionURL">
+                <input placeholder="URL" ng-model="newJob.positionURL" type="text" class="form-control" id="positionURL">
               </div>
               <div class="form-group">
-                <input placeholder="Salary" ng-model="salary" type="text" class="form-control" id="salary">
+                <input placeholder="Salary" ng-model="newJob.salary" type="text" class="form-control" id="salary">
               </div>
               <div class="form-group">
-                <input placeholder="Requirements/Skills" ng-model="required" type="text" class="form-control" id="required">
+                <input placeholder="Requirements/Skills" ng-model="newJob.requirements" type="text" class="form-control" id="required">
               </div>
             </div>
 
@@ -41,16 +41,16 @@
             <div class="col-md-6">
               <h6>CONTACT</h6>
               <div class="form-group">
-                <input placeholder="Name" ng-model="contact" type="text" class="form-control" id="contact">
+                <input placeholder="Name" ng-model="newJob.contactName" type="text" class="form-control" id="contactName">
               </div>
               <div class="form-group">
-                <input placeholder="Job Title" ng-model="contactPosition" type="text" class="form-control" id="contactPosition">
+                <input placeholder="Job Title" ng-model="newJob.contactPosition" type="text" class="form-control" id="contactPosition">
               </div>
               <div class="form-group">
-                <input placeholder="Email" ng-model="contactEmail" type="email" class="form-control" id="contactEmail">
+                <input placeholder="Email" ng-model="newJob.contactEmail" type="email" class="form-control" id="contactEmail">
               </div>
               <div class="form-group">
-                <input placeholder="Phone Number" ng-model="contactPhone" type="text" class="form-control" id="contactPhone">
+                <input placeholder="Phone Number" ng-model="newJob.contactPhone" type="text" class="form-control" id="contactPhone">
               </div>
             </div>
 
@@ -59,7 +59,7 @@
               <div class="row">
                 <div class="col-md-4 center">
                   <label>Status</label>
-                  <select ng-model="status" class="form-control statusForm">
+                  <select ng-model="newJob.status" class="form-control statusForm">
                     <option class="cold">cold</option>
                     <option class="applied">applied</option>
                     <option class="scheduled">scheduled</option>
@@ -72,27 +72,27 @@
                 <div class="col-md-4">
                   <div class="form-group center">
                     <label>Date Applied</label>
-                    <input ng-model="applyDate" type="date" class="form-control" id="applyDate">
+                    <input ng-model="newJob.applied" type="date" class="form-control" id="applied">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group center">
                     <label>Most Recent Contact</label>
-                    <input ng-model="recentContact" type="date" class="form-control" id="recentContact">
+                    <input ng-model="newJob.recentContact" type="date" class="form-control" id="recentContact">
                   </div>
                 </div>
               </div>
 
               <h6>NOTES</h6>
               <div class="form-group">
-                <textarea rows="3" placeholder="Additional notes" ng-model="notes" type="text" class="form-control" id="notes"></textarea>
+                <textarea rows="3" placeholder="Additional notes" ng-model="newJob.notes" type="text" class="form-control" id="notes"></textarea>
               </div>
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-12 formSubmit">
-              <button ng-click="addJob=false"  value="Add" type="submit" class="btn btn-success">Submit</button>
+              <button ng-click="postCompany(); go('/')"  value="Add" type="submit" class="btn btn-success">Submit</button>
             </div>
           </div>
         </form>
