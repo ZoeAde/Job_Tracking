@@ -4,7 +4,7 @@ app.controller('jobController', ['$scope', '$location', 'factories', function($s
       $location.path(marker);
     };
 
-    $scope.deleteJob = function(job) {;
+    $scope.deleteJob = function(job) {
       var index = $scope.jobs.indexOf(job);
       $scope.jobs.splice(index, 1);
     };

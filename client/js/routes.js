@@ -4,11 +4,11 @@ appRoutes.config(function($routeProvider){
 console.log("routes");
 $routeProvider
   .when('/', {
-    templateUrl: '../pages/table.html',
+    templateUrl: 'views/table.html',
     controller: 'myController'
   })
   .when('/add', {
-    templateUrl: '../pages/addPost.html',
+    templateUrl: 'views/addPost.html',
     controller: 'myController'
   });
 
