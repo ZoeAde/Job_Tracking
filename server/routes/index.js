@@ -15,7 +15,7 @@ router.get('/companies', function(req, res, next){
 router.post('/companies', function(req, res, next){
   newCompany = new Company({
     companyName: req.body.companyName,
-    companyUrl: req.body.companyUrl,
+    companyURL: req.body.companyURL,
     industry: req.body.industry,
     location: req.body.location,
     positionTitle: req.body.positionTitle,

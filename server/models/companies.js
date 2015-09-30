@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var Company = new Schema({
   companyName: String,
-  companyUrl: String,
+  companyURL: String,
   industry: String,
   location: String,
   positionTitle: String,

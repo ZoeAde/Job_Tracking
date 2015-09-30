@@ -12,13 +12,16 @@
 <!--   NAV -->
     <nav class="navbar navbar-default">
       <div class="container-fluid navContainer">
-        <div class="navbar-header">
-          <a class="navbar-brand">Jobgress</a>
-          <ul class="nav navbar-nav">
-            <li><a href="/#/add" ng-click="go('/add')"><i class="fa fa-plus"></i>Add Job</a></li>
-            <li><a href="/#/" ng-click="go('/')">Tracking</a></li>
-            <li><a ng-click="showViews = !showViews">Views</a></li>
-          </ul>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="navbar-header">
+              <ul class="nav navbar-nav">
+                <li><a href="/#/add"><i class="fa fa-plus"></i>Add Job</a></li>
+                <li><a href="/#/">Tracking</a></li>
+                <li><a ng-click="showViews = !showViews">Views</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     <div ng-show="showViews">
@@ -27,17 +30,17 @@
           <h6 class="viewHeader">Company</h6>
             <div class="checkbox">
               <label >
-                <input ng-click="companyNameToggle = !companyNameToggle" type="checkbox" checked>Name
+                <input checked ng-click="companyNameToggle = !companyNameToggle" type="checkbox" checked>Name
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="companyIndustryToggle = !companyIndustryToggle" type="checkbox">Industry
+                <input checked ng-click="companyIndustryToggle = !companyIndustryToggle" type="checkbox">Industry
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="companyLocationToggle = !companyLocationToggle" type="checkbox">Location
+                <input checked ng-click="companyLocationToggle = !companyLocationToggle" type="checkbox">Location
               </label>
             </div>
         </div>
@@ -45,40 +48,22 @@
           <h6 class="viewHeader">Position</h6>
             <div class="checkbox">
               <label>
-                <input ng-click="positionTitleToggle = !positionTitleToggle" type="checkbox">Title
+                <input checked ng-click="positionTitleToggle = !positionTitleToggle" type="checkbox">Title
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="positionSalaryToggle = !positionSalaryToggle" type="checkbox">Salary
+                <input checked ng-click="salaryToggle = !salaryToggle" type="checkbox">Salary
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="positionReqsToggle = !positionReqsToggle" type="checkbox">Requirements
-              </label>
-            </div>
-        </div>
-        <div class="col-xs-3 viewBlock">
-          <h6 class="viewHeader">Contact</h6>
-            <div class="checkbox">
-              <label>
-                <input ng-click="contactNameToggle = !contactNameToggle" type="checkbox">Name
+                <input checked ng-click="requirementsToggle = !requirementsToggle" type="checkbox">Requirements
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="contactTitleToggle = !contactTitleToggle" type="checkbox">Job Title
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input ng-click="contactEmailToggle = !contactEmailToggle"type="checkbox">Email
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input ng-click="contactPhoneToggle = !contactPhoneToggle" type="checkbox">Phone
+                <input checked ng-click="contactNameToggle = !contactNameToggle" type="checkbox">Contact
               </label>
             </div>
         </div>
@@ -86,22 +71,22 @@
           <h6 class="viewHeader">Tracking</h6>
             <div class="checkbox">
               <label>
-                <input ng-click="trackingStatusToggle = !trackingStatusToggle" type="checkbox">Status
+                <input checked ng-click="trackingStatusToggle = !trackingStatusToggle" type="checkbox">Status
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="trackingAppliedToggle = !trackingAppliedToggle" type="checkbox">Applied
+                <input checked ng-click="appliedToggle = !appliedToggle" type="checkbox">Applied
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="trackingContactToggle = !trackingContactToggle" type="checkbox">Last Contact
+                <input checked ng-click="recentContactToggle = !recentContactToggle" type="checkbox">Last Contact
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input ng-click="trackingNotesToggle = !trackingNotesToggle" type="checkbox">Notes
+                <input checked ng-click="notesToggle = !notesToggle" type="checkbox">Notes
               </label>
             </div>
         </div>

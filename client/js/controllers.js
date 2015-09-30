@@ -1,8 +1,11 @@
-app.controller('jobController', function($scope, $location, jobFactory) {
+app.controller('jobController', function($scope, $location, $window, jobFactory) {
     $scope.go = function(marker) {
       $location.path(marker);
     };
 
+    $scope.redirect = function(url) {
+      $window.open('http://' + url);
+    };
 ///////////////////////////
   $scope.edit = false;
   getCompanies = function(url) {

@@ -9,7 +9,7 @@
                 <input placeholder="Name" ng-model="newJob.companyName" type="text" class="form-control" id="companyName">
               </div>
               <div class="form-group">
-                <input placeholder="URL" ng-model="newJob.companyURL" type="text" class="form-control" id="companyURL">
+                <input placeholder="URL" data-ng-model="newJob.companyURL" type="text" class="form-control" id="companyURL">
               </div>
               <div class="form-group">
                 <input placeholder="Industry" ng-model="newJob.industry" type="text" class="form-control" id="industry">
@@ -28,7 +28,7 @@
                 <input placeholder="URL" ng-model="newJob.positionURL" type="text" class="form-control" id="positionURL">
               </div>
               <div class="form-group">
-                <input placeholder="Salary" ng-model="newJob.salary" type="text" class="form-control" id="salary">
+                <input type="number" name="currency" min="1" max="1000000000" placeholder="Salary" ng-model="newJob.salary" type="text" class="form-control" id="salary">
               </div>
               <div class="form-group">
                 <input placeholder="Requirements/Skills" ng-model="newJob.requirements" type="text" class="form-control" id="required">
@@ -44,13 +44,13 @@
                 <input placeholder="Name" ng-model="newJob.contactName" type="text" class="form-control" id="contactName">
               </div>
               <div class="form-group">
-                <input placeholder="Job Title" ng-model="newJob.contactPosition" type="text" class="form-control" id="contactPosition">
+                <input placeholder="Title" ng-model="newJob.contactTitle" type="text" class="form-control" id="contactTitle">
               </div>
               <div class="form-group">
-                <input placeholder="Email" ng-model="newJob.contactEmail" type="email" class="form-control" id="contactEmail">
+                <input placeholder="Email" ng-model="newJob.contactEmail" type="text" class="form-control" id="contactEmail">
               </div>
               <div class="form-group">
-                <input placeholder="Phone Number" ng-model="newJob.contactPhone" type="text" class="form-control" id="contactPhone">
+                <input placeholder="Phone Number" ng-model="newJob.contactPhone" type="number" size="10" class="form-control" id="contactPhone">
               </div>
             </div>
 

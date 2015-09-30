@@ -5,6 +5,8 @@ app.factory('jobFactory', ['$http', function($http){
     return $http.get(url);
   };
   obj.post = function(url, payload) {
+    console.log('payload', payload);
+    console.log('url', url)
     return $http.post(url, payload);
   };
   obj.delete = function(url, id) {
@@ -18,10 +20,3 @@ app.factory('jobFactory', ['$http', function($http){
   };
   return obj;
   }]);
-
-
-
-
-    // $scope.jobs = [{status: "cold", company:"DeVita", companyURL: "www.devita.com", industry:"Healthcare", location:"Denver", position:"Jr Developer", contact: "Juan Ramirez", notes: "This is a perfect fit!"},{status: "interviewing", company:"ESPN", industry:"Sports", location:"San Francisco", position:"Full Stack Dev", contact: "Mary Ann Brown", notes: "Waiting to hear back"},{status: "scheduled", company:"Google", industry:"Technology", location:"Boulder", position:"Front End Web Developer", contact: "Julie Cooper", notes: "Waiting to hear back"}];
-
-

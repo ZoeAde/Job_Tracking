@@ -140,3 +140,8 @@ a:hover {
 .checkbox {
   font-size: 0.9em;
 }
+
+ul {
+  list-style-type: none;
+  padding-left: 0.5em;
+}
