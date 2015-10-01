@@ -30,17 +30,13 @@ app.controller('jobController', function($scope, $location, $window, jobFactory)
       });
   };
 
-  // $scope.editMovie = function(id) {
-  //   jobFactory.put('/company/' + id, $scope.newJob)
-  //     .then(function(response){
-  //       $scope.newJob.companyName = "";
-  //       $scope.newJob.positionTitle = "";
-  //       $scope.newJob.location = "";
-  //       /////ADD ALL SCOPES HERE TO CLEAR
-  //       $scope.edit = false;
-  //       getCompanies('/companies');
-  //   });
-  // };
+  $scope.editCompany = function(id) {
+    jobFactory.put('/company/' + id, $scope.newJob)
+      .then(function(response){
+        /////ADD ALL SCOPES HERE TO CLEAR
+
+    });
+  };
 
   // $scope.getCompany = function(id) {
   //   jobFactory.getSingle('/company/' + id)

@@ -8,93 +8,6 @@
 
 
     <div class="container-fluid inner">
-        <button ng-click="showViews = !showViews" type="button" class="btn btn-default dropdown-toggle">
-            <i class="glyphicon glyphicon-eye-open"></i>
-        </button>
-        <button type="button" class="btn btn-default">
-            <i class="glyphicon glyphicon-plus"></i>
-        </button>
-        <button type="button" class="btn btn-default">
-            <i class="glyphicon glyphicon-heart"></i>
-        </button>
-        <button type="button" class="btn btn-default">
-            <i ng-click="editShow = !editShow" type="checkbox" class="glyphicon glyphicon-trash"></i>
-        </button>
-<!--         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search jobs">
-        </div> -->
-      </div>
-      <div>
-            <div ng-show="showViews">
-      <div class="row">
-        <div class="col-xs-3 viewBlock">
-          <h6 class="viewHeader">Company</h6>
-            <div class="checkbox">
-              <label >
-                <input checked ng-click="companyNameToggle = !companyNameToggle" type="checkbox" checked>Name
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="companyIndustryToggle = !companyIndustryToggle" type="checkbox">Industry
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="companyLocationToggle = !companyLocationToggle" type="checkbox">Location
-              </label>
-            </div>
-        </div>
-        <div class="col-xs-3 viewBlock">
-          <h6 class="viewHeader">Position</h6>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="positionTitleToggle = !positionTitleToggle" type="checkbox">Title
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="salaryToggle = !salaryToggle" type="checkbox">Salary
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="requirementsToggle = !requirementsToggle" type="checkbox">Requirements
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="contactNameToggle = !contactNameToggle" type="checkbox">Contact
-              </label>
-            </div>
-        </div>
-        <div class="col-xs-3 viewBlock">
-          <h6 class="viewHeader">Tracking</h6>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="trackingStatusToggle = !trackingStatusToggle" type="checkbox">Status
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="appliedToggle = !appliedToggle" type="checkbox">Applied
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="recentContactToggle = !recentContactToggle" type="checkbox">Last Contact
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input checked ng-click="notesToggle = !notesToggle" type="checkbox">Notes
-              </label>
-            </div>
-        </div>
-      </div>
-    </div>
-      </div>
-
 
 <!-- JOB TABLE -->
       <table class="tableizer-table table table-hover table-responsive" data-card-view="true">
@@ -136,10 +49,23 @@
             <a ng-click="sortType = 'notes'; sortReverse = !sortReverse">Notes <span ng-show="sortType == 'notes' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'notes' && sortReverse" class="fa fa-caret-up"></span></a>
           </th>
         </tr>
-      <tbody id="tableBody">
-        <tr ng-repeat="job in jobs | orderBy:sortType:sortReverse | filter:searchJobs" class={{job.status}}>
-          <td ng-show="editShow" class="edit"><button class="btn glyphicon glyphicon-edit" data-toggle="popover" data-trigger="mouse-over" title="Edit" data-html="true"></button><button ng-click="deleteCompany(job._id)" class="btn glyphicon glyphicon-remove" data-toggle="popover" data-trigger="hover" title="Delete" data-html="true"></button></td>
-          <td ng-hide="trackingStatusToggle">{{ job.status }} </td>
+      <tbody id="tableBody" ng-repeat="job in jobs | orderBy:sortType:sortReverse | filter:searchJobs">
+        <tr class={{job.status}}>
+          <td ng-hide="trackingStatusToggle">
+            <div class="hover-btn remove-btn">
+              <button ng-click="deleteCompany(job._id)" type="button" class="btn btn-xs glyphicon glyphicon-remove">
+              </button>
+            </div>
+            <div class="hover-btn edit-btn" ng-click="editForm = !editForm">
+              <button type="button" class="btn btn-xs glyphicon glyphicon-edit">
+              </button>
+            </div>
+            <div class="hover-btn heart-btn">
+              <button type="button" class="heart btn glyphicon glyphicon-heart">
+              </button>
+            </div>
+          {{ job.status }}
+          </td>
           <td ng-click="redirect(job.companyURL)" ng-hide="companyNameToggle"><a>{{ job.companyName }}</a></td>
           <td ng-hide="companyIndustryToggle">{{ job.industry }}</td>
           <td ng-hide="companyLocationToggle">{{ job.location }}</td>
@@ -156,9 +82,58 @@
           </td>
          <!--  <td ng-hide="appliedToggle">{{ job.applied }}</td> -->
           <!-- <td ng-hide="recentContactToggle">{{ job.recentContact }}</td> -->
-          <td ng-hide="notesToggle">{{ job.notes }}</td>
-
+          <td ng-hide="notesToggle">
+          {{ job.notes }}
+          </td>
         </tr>
+<!-- EDIT TABLE HERE -->
+        <tr ng-show="editForm" ng-keyup="editCompany(job._id)">
+          <td ng-hide="trackingStatusToggle">
+            <select name="hey" class="form-control statusForm" >
+              <option class="cold">cold</option>
+              <option class="applied">applied</option>
+              <option class="scheduled">scheduled</option>
+              <option class="interviewing">interviewing</option>
+              <option class="offer">offer</option>
+              <option class="denied">denied</option>
+            </select>
+          </td>
+          <td ng-hide="companyNameToggle">
+            <input placeholder="Name" type="text" class="form-control" id="companyName">
+            <br>
+            <input placeholder="URL" type="text" class="form-control" id="companyURL">
+          </td>
+          <td ng-hide="companyIndustryToggle">
+            <input placeholder="Industry" type="text" class="form-control" id="industry">
+          </td>
+          <td ng-hide="companyLocationToggle">
+            <input placeholder="Location" type="text" class="form-control" id="location">
+          </td>
+          <td ng-hide="positionTitleToggle">
+            <input placeholder="Title" type="text" class="form-control" id="positionTitle">
+            <br>
+            <input placeholder="URL" type="text" class="form-control" id="positionURL">
+          </td>
+          <td ng-hide="salaryToggle">
+            <input type="number" name="currency" min="1" max="1000000000" placeholder="Salary" type="text" class="form-control" id="salary"></td>
+          <td ng-hide="requirementsToggle">
+            <input placeholder="Requirements" type="text" class="form-control" id="required">
+          </td>
+          <td ng-hide="contactNameToggle">
+            <input placeholder="Name" type="text" class="form-control" id="contactName">
+            <br>
+            <input placeholder="Title" type="text" class="form-control" id="contactTitle">
+            <br>
+            <input placeholder="Email" type="text" class="form-control" id="contactEmail">
+            <br>
+            <input placeholder="Phone Number" type="number" size="10" class="form-control" id="contactPhone">
+          </td>
+          <td ng-hide="notesToggle">
+            <textarea rows="3" placeholder="Additional notes" ng-model="newJob.notes" type="text" class="form-control" id="notes">{{ job.notes }}</textarea>
+          </td>
+        </tr>
+
+<!-- END EDIT TABLE -->
       </tbody>
       </table>
     </div>
