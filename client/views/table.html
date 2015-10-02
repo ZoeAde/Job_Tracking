@@ -53,15 +53,15 @@
         <tr class={{job.status}}>
           <td ng-hide="trackingStatusToggle">
             <div class="hover-btn remove-btn">
-              <button ng-click="deleteCompany(job._id)" type="button" class="btn btn-xs glyphicon glyphicon-remove">
+              <button ng-click="deleteCompany(job._id)" type="button" class="btn transparent btn-xs glyphicon glyphicon-remove">
               </button>
             </div>
             <div class="hover-btn edit-btn" ng-click="editForm = !editForm">
-              <button type="button" class="btn btn-xs glyphicon glyphicon-edit">
+              <button type="button" class="btn transparent btn-xs glyphicon glyphicon-edit">
               </button>
             </div>
             <div class="hover-btn heart-btn">
-              <button type="button" class="heart btn glyphicon glyphicon-heart">
+              <button type="button" class="heart transparent btn glyphicon glyphicon-heart">
               </button>
             </div>
           {{ job.status }}
@@ -128,11 +128,11 @@
             <br>
             <input placeholder="Phone Number" type="number" size="10" class="form-control" id="contactPhone">
           </td>
-          <td ng-hide="notesToggle">
+          <td class="notesColumn" ng-hide="notesToggle">
             <textarea rows="3" placeholder="Additional notes" ng-model="newJob.notes" type="text" class="form-control" id="notes">{{ job.notes }}</textarea>
           </td>
         </tr>
-
+        <td></td>
 <!-- END EDIT TABLE -->
       </tbody>
       </table>

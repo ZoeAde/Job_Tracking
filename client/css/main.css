@@ -66,13 +66,7 @@ a:hover {
 }
 
 
-
-
-
-
 /*STATUS COLORS*/
-
-
 .cold {
   background-color: #EEF2EE;
 }
@@ -153,7 +147,6 @@ ul {
      left: -1.7em;
      font-size: 0.6em;
      color: gray;
-
   }
 
   button:focus {
@@ -164,7 +157,7 @@ ul {
     margin-top: 6em;
   }
 
-  .btn {
+  .transparent {
     background-color: transparent;
   }
 
@@ -174,3 +167,8 @@ ul {
   .red {
     color: red;
   }
+
+
+.space {
+  margin-bottom: 3em;
+}

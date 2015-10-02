@@ -7,7 +7,6 @@ app.controller('jobController', function($scope, $location, $window, jobFactory)
       $window.open('http://' + url);
     };
 ///////////////////////////
-  $scope.edit = false;
   getCompanies = function(url) {
     jobFactory.getAll(url)
       .then(function(response){
@@ -34,7 +33,6 @@ app.controller('jobController', function($scope, $location, $window, jobFactory)
     jobFactory.put('/company/' + id, $scope.newJob)
       .then(function(response){
         /////ADD ALL SCOPES HERE TO CLEAR
-
     });
   };
 
