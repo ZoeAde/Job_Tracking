@@ -11,6 +11,7 @@ header {
   text-align: center;
   overflow: auto;
 }
+
 .site-title {
   font-size: 50px;
   font-weight: 300;
@@ -22,9 +23,6 @@ header {
 }
 
 /*TABLE*/
-
-
-
 .c {
   display: block;
   width: 100px;
@@ -33,13 +31,8 @@ header {
   margin: 10px;
 }
 
-/*table{
-  margin: 10px auto;
-}*/
-
 table > tbody > tr.tableizer-firstrow > th {
   padding: 10px;
-/*  background: #ABBFAC;*/
 }
 
 body > div> div.container-fluid.inner > table > tbody > tr > td{
@@ -62,15 +55,14 @@ a:hover {
     padding-bottom: 60px;
 }
 
-
 .td {
   height: 30%;
 }
+
 /*NAV*/
 .navContainer {
   background-color: #4B544B;
 }
-
 
 /*STATUS COLORS*/
 .cold {
@@ -96,8 +88,8 @@ a:hover {
 .denied {
    background-color: #89998A;
 }
-/*END STATUS COLORS*/
 
+/*END STATUS COLORS*/
 
 .inline {
   display: inline-block;
@@ -147,33 +139,33 @@ ul {
 }
 
 /*EDIT BUTTONS*/
-  .hover-btn {
-     position: absolute;
-     padding-left: 0.2em;
-     left: -1.7em;
-     font-size: 0.6em;
-     color: gray;
-  }
+.hover-btn {
+   position: absolute;
+   padding-left: 0.2em;
+   left: -1.7em;
+   font-size: 0.6em;
+   color: gray;
+}
 
-  button:focus {
-    outline:0 !important;
-  }
+button:focus {
+  outline: 0 !important;
+}
 
-  .heart-btn {
-    margin-top: 6em;
-  }
+.heart-btn {
+  margin-top: 6em;
+}
 
-  .transparent {
-    background-color: transparent;
-  }
+.transparent {
+  background-color: transparent;
+}
 
-  .edit-btn {
-    margin-top: 3em;
-  }
-  .heart-active {
-    color: red;
-  }
+.edit-btn {
+  margin-top: 3em;
+}
+.heart-active {
+  color: red;
+}
 
-  .space {
-    margin-bottom: 3em;
-  }
+.space {
+  margin-bottom: 3em;
+}
